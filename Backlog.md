@@ -1,4 +1,4 @@
-## LOGRA — Organiza tus ideas, alcanza tus metas
+## LOGRA — *Organiza tus ideas, alcanza tus metas.*
 Una idea clara, un paso a la vez.
 
 ## Sobre el proyecto
