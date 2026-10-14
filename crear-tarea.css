@@ -1,0 +1,353 @@
+
+/* Mis fuentes lindas */
+
+@font-face {
+    font-family: "FuenteTitulos";
+    src: url("fonts/KGPerfectPenmanship.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "FuenteTextos";
+    src: url("fonts/Letters%20for%20Learners.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Generalidades */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    font-family: "FuenteTextos", sans-serif;
+    color: #51445a;
+    background-image:
+        linear-gradient(
+            rgba(249, 239, 255, 0.45),
+            rgba(252, 232, 243, 0.45)
+        ),
+        url("images/fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* Contenedor */
+
+main {
+    width: 92%;
+    max-width: 560px;
+    margin: 20px auto;
+    flex: none;
+}
+
+
+/* Tarjeta del formulario */
+
+.tarjeta-formulario {
+    position: relative;
+    width: 100%;
+    padding: 16px 24px;
+    background-color: rgba(255, 255, 255, 0.97);
+    border: 1px solid #eadcf2;
+    border-radius: 20px;
+    box-shadow:
+        0 5px 10px rgba(75, 45, 90, 0.10),
+        0 15px 25px rgba(100, 55, 125, 0.20),
+        0 30px 45px rgba(80, 40, 100, 0.18),
+        inset 0 1px 2px rgba(255, 255, 255, 0.9);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.tarjeta-formulario:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 8px 15px rgba(75, 45, 90, 0.12),
+        0 20px 35px rgba(100, 55, 125, 0.25),
+        0 35px 55px rgba(80, 40, 100, 0.22);
+}
+
+
+/* Mi muñequita :) */
+
+.foto-naya {
+    position: absolute;
+    width: 350px;
+    height: auto;
+    top: -85px;
+    right: -110px;
+    z-index: 10;
+    object-fit: contain;
+}
+
+
+/* Presentacion principal */
+
+.tarjeta-formulario .presentacion {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.tarjeta-formulario .presentacion h1 {
+    font-family: "FuenteTitulos", sans-serif;
+    font-size: 24px;
+    color: #8856a7;
+    text-align: left;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+}
+
+.tarjeta-formulario .presentacion p {
+    font-family: "FuenteTextos", sans-serif;
+    font-size: 18px;
+    color: #8d7a95;
+    text-align: left;
+    margin: 0;
+    line-height: 1.3;
+}
+
+
+/* Titulo tarea nueva  */
+
+.tarjeta-formulario h2 {
+    font-family: "FuenteTitulos", sans-serif;
+    font-size: 25px;
+    color: #8856a7;
+    text-align: left;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+}
+
+
+/* Espacios*/
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 10px;
+}
+
+.grupo-campo label {
+    display: block;
+    width: 100%;
+    font-family: "FuenteTextos", sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    color: #654b72;
+    text-align: left;
+    margin-bottom: 4px;
+}
+
+
+/* Campos de entrada */
+
+.grupo-campo input,
+.grupo-campo textarea,
+.grupo-campo select {
+    width: 100%;
+    padding: 7px 10px;
+    font-family: "FuenteTextos", sans-serif;
+    font-size: 17px;
+    color: #4b3b52;
+    text-align: center;
+    background-color: #fdfaff;
+    border: 1px solid #e4d3ed;
+    border-radius: 13px;
+    outline: none;
+    box-shadow: 0 3px 8px rgba(120, 75, 145, 0.05);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* Texto de ejemplo */
+
+.grupo-campo input::placeholder,
+.grupo-campo textarea::placeholder {
+    color: #b2a3ba;
+    opacity: 1;
+}
+
+
+/* Efecto al seleccionar un campo */
+
+.grupo-campo input:focus,
+.grupo-campo textarea:focus,
+.grupo-campo select:focus {
+    border-color: #b783d2;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(183, 131, 210, 0.16);
+}
+
+
+/* Área de descripción */
+
+.grupo-campo textarea {
+    height: 42px;
+    min-height: 42px;
+    padding: 7px 10px;
+    line-height: 1.3;
+    resize: none;
+}
+
+.grupo-campo select {
+    cursor: pointer;
+}
+
+
+/* Botones  */
+
+.botones-formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 140px;
+    padding: 9px 17px;
+    font-family: "FuenteTextos", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 5px 14px rgba(120, 75, 145, 0.12);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+
+/* Botón guardar */
+
+.btn-guardar {
+    color: #ffffff;
+    background: linear-gradient(135deg, #a779c6, #d58bb8);
+    box-shadow: 0 6px 16px rgba(167, 121, 198, 0.30);
+}
+
+.btn-guardar:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #9160b3, #c76fa3);
+    box-shadow: 0 9px 20px rgba(167, 121, 198, 0.38);
+}
+
+
+/* Botón cancelar */
+
+.btn-cancelar {
+    color: #8856a7;
+    background: linear-gradient(135deg, #f8f0fc, #fcecf4);
+    border: 1px solid #e6d3f0;
+    box-shadow: 0 5px 14px rgba(120, 75, 145, 0.12);
+}
+
+.btn-cancelar:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #b783d2, #d58bb8);
+    box-shadow: 0 9px 20px rgba(167, 121, 198, 0.28);
+}
+
+
+/* Footer */
+
+footer {
+    padding: 8px 10px;
+    background-color: transparent;
+    text-align: center;
+    color: #000000;
+    font-family: "FuenteTextos", sans-serif;
+    font-size: 23px;
+    box-shadow: none;
+    transform: translateY(0px);
+}
+
+
+/* Celular */
+
+@media (max-width: 600px) {
+    main {
+        width: 94%;
+        margin: 22px auto;
+    }
+
+    .tarjeta-formulario {
+        padding: 22px 17px;
+        border-radius: 19px;
+    }
+
+    .tarjeta-formulario .presentacion h1 {
+        font-size: 29px;
+    }
+
+    .tarjeta-formulario .presentacion p {
+        font-size: 17px;
+        line-height: 1.3;
+    }
+
+    .tarjeta-formulario h2 {
+        font-size: 27px;
+    }
+
+    .grupo-campo label {
+        font-size: 20px;
+    }
+
+    .grupo-campo input,
+    .grupo-campo textarea,
+    .grupo-campo select {
+        font-size: 19px;
+    }
+
+    .grupo-campo textarea {
+        height: 42px;
+        min-height: 42px;
+        padding: 7px 10px;
+    }
+
+    .botones-formulario {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 20px;
+    }
+}

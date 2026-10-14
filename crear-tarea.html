@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Nueva Tarea </title>
+
+    <link rel="stylesheet" href="crear-tarea.css">
+</head>
+
+<body>
+
+    <main>
+
+       
+<main>
+    <section class="tarjeta-formulario">
+    <img src="images/Nayaxd.png" alt="Naya" class="foto-naya">
+
+        <!-- Presentación dentro de la misma caja -->
+        <section class="presentacion">
+            <h1>Vamos a crear una tarea ♡</h1>
+            <p>Organiza tus actividades y haz realidad tus objetivos.</p>
+        </section>
+
+            <form id="formulario-tarea">
+
+                <!-- Nombre -->
+                <div class="grupo-campo">
+                    <label for="nombre">Nombre de la tarea</label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Ej. Estudiar para el parcial"
+                        required
+                    >
+                </div>
+
+                <!-- Descripción -->
+                <div class="grupo-campo">
+                    <label for="descripcion">Descripción</label>
+
+                    <textarea
+                        id="descripcion"
+                        name="descripcion"
+                        rows="4"
+                        placeholder="Escribe los detalles de tu tarea..."
+                    ></textarea>
+                </div>
+
+                <!-- Persona asignada -->
+                <div class="grupo-campo">
+                    <label for="asignado">Asignado a</label>
+
+                    <input
+                        type="text"
+                        id="asignado"
+                        name="asignado"
+                        placeholder="¿Quién realizará esta tarea?"
+                    >
+                </div>
+
+                <!-- Fecha de entrega -->
+                <div class="grupo-campo">
+                    <label for="fecha">Fecha de entrega</label>
+
+                    <input
+                        type="date"
+                        id="fecha"
+                        name="fecha"
+                        required
+                    >
+                </div>
+
+                <!-- Estado -->
+                <div class="grupo-campo">
+                    <label for="estado">Estado de la tarea</label>
+
+                    <select id="estado" name="estado" required>
+                        <option value="por-hacer">Por hacer</option>
+                        <option value="en-progreso">En progreso</option>
+                        <option value="completada">Completada</option>
+                    </select>
+                </div>
+
+                <!-- Botones -->
+                <div class="botones-formulario">
+                    <button type="submit" class="btn btn-guardar">
+                        Guardar tarea
+                    </button>
+
+                    <a href="tareas.html" class="btn btn-cancelar">Cancelar</a>
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>LOGRA 2026 | Organiza tus ideas. Cumple tus metas. ♡</p>
+    </footer>
+
+</body>
+
+</html>
