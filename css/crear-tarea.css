@@ -357,3 +357,24 @@ footer {
 footer a { color: #8856a7; text-decoration: none; font-weight: bold; }
 footer a:hover { text-decoration: underline; }
 
+
+/* Adaptación de las imágenes para celulares */
+@media (max-width: 750px) {
+    .imagen-saludo {
+        width: 180px;
+        top: -20px;
+        right: -10px;
+    }
+
+    .saludo-texto {
+        max-width: 55%;
+    }
+
+    /* Foto de Naya en celulares */
+    .foto-naya {
+        width: 120px;
+        max-width: 35%;
+        top: -20px;
+        right: -5px;
+    }
+}
