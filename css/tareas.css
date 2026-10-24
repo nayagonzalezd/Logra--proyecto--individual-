@@ -354,3 +354,17 @@ footer p a {
     right: -250px;
     display: block;
 }
+
+
+/* Adaptación de la imagen del saludo para celulares */
+@media (max-width: 750px) {
+    .imagen-saludo {
+        width: 180px;
+        top: -20px;
+        right: -10px;
+    }
+
+    .saludo-texto {
+        max-width: 55%;
+    }
+}
