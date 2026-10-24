@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Configuración general de la página -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5edff">
+
+  <!-- Título de la pestaña del navegador -->
+  <title>Inicio | LOGRA ♡</title>
+
+  <!-- Conexión con los estilos CSS -->
+  <!-- ../ permite salir de pages y entrar en css -->
+  <link rel="stylesheet" href="../css/inicio.css">
+</head>
+
+<body>
+
+  <!-- BARRA SUPERIOR Y NAVEGACIÓN
+       Logo de LOGRA y enlaces a las páginas -->
+  <header class="barra-superior">
+
+    <!-- Logo: al hacer clic, vuelve al inicio -->
+    <a class="marca" href="index.html" aria-label="Inicio de LOGRA">
+      <span class="marca-icono">♡</span>
+      <span>LOGRA</span>
+    </a>
+
+    <!-- Menú principal -->
+    <nav aria-label="Navegación principal">
+      <a class="nav-activo" href="index.html">Inicio</a>
+      <a href="tareas.html">Mi planificador</a>
+      <a href="crear-tarea.html">+ Nueva tarea</a>
+    </nav>
+
+  </header>
+
+
+  <!-- CONTENIDO PRINCIPAL DEL DASHBOARD -->
+  <main class="dashboard">
+
+    <!-- 2.1. Bienvenida e ilustración decorativa -->
+    <section class="saludo panel">
+
+      <div class="saludo-texto">
+        <span class="eyebrow">BIENVENIDA A LOGRA </span>
+
+        <h1>¡Hola! <span>♡</span></h1>
+
+        <p>Un paso a la vez. Hoy también puedes lograrlo.</p>
+
+        <a class="boton boton-principal" href="tareas.html">
+          Ir a mi planificador <span>→</span>
+        </a>
+      </div>
+
+      <!-- Imagen decorativa -->
+     <div class="saludo-ilustracion">
+    <img src="../images/nayacomputa.png"
+         alt="Ilustración decorativa"
+         style="width: 250px; height: auto;">
+</div>
+    </section>
+
+
+    <!--  TARJETAS DE RESUMEN
+         Los valores se actualizan con JavaScript-->
+
+    <section class="resumen-grid" aria-label="Resumen de tu día">
+
+      <!-- Cantidad total de tareas -->
+      <article class="resumen-card resumen-lila">
+        <span class="resumen-icono">✎</span>
+
+        <div>
+          <span class="resumen-label">Tareas guardadas</span>
+          <strong id="total-tareas">0</strong>
+        </div>
+
+        <small>poquito a poquito</small>
+      </article>
+
+      <!-- Cantidad de tareas completadas -->
+      <article class="resumen-card resumen-rosa">
+        <span class="resumen-icono">♡</span>
+
+        <div>
+          <span class="resumen-label">Completadas</span>
+          <strong id="tareas-completadas">0</strong>
+        </div>
+
+        <small>¡vas muy bien!</small>
+      </article>
+
+      <!-- Resumen del consumo de agua -->
+      <article class="resumen-card resumen-azul">
+        <span class="resumen-icono">💧</span>
+
+        <div>
+          <span class="resumen-label">Vasos de agua</span>
+          <strong><span id="agua-resumen">0</span>/8</strong>
+        </div>
+
+        <small>amor también es cuidarte</small>
+      </article>
+
+    </section>
+
+
+    <!-- TÍTULO DE LAS HERRAMIENTAS
+         Muestra la fecha actual -->
+    <div class="seccion-titulo">
+
+      <div>
+        <span class="eyebrow">ORGANIZA TU DÍA</span>
+        <h2>Tu espacio productivo ✨</h2>
+      </div>
+
+      <span class="fecha-hoy" id="fecha-hoy"></span>
+
+    </div>
+
+
+    <!-- WIDGETS DE ORGANIZACIÓN PERSONAL-->
+    <section class="widgets-grid">
+
+
+      <!-- 5.1. TO-DO LIST: pendientes rápidos -->
+      <article class="widget panel widget-todo">
+
+        <div class="widget-cabecera">
+          <div>
+            <span class="widget-emoji">📝</span>
+            <h3>To-do list</h3>
+          </div>
+
+          <span class="mini-etiqueta">Mis pendientes</span>
+        </div>
+
+        <p class="widget-descripcion">
+          Anota lo que quieres hacer hoy.
+        </p>
+
+        <!-- Formulario para agregar pendientes -->
+        <form id="form-rapido" class="entrada-inline">
+
+          <label class="solo-lectores" for="nuevo-rapido">
+            Nuevo pendiente
+          </label>
+
+          <input
+            id="nuevo-rapido"
+            type="text"
+            placeholder="Ej. Repasar Java..."
+            maxlength="120"
+            required
+          >
+
+          <button type="submit" aria-label="Agregar pendiente">
+            +
+          </button>
+
+        </form>
+
+        <!-- JavaScript coloca aquí los pendientes -->
+        <ul id="lista-rapida" class="lista-rapida"></ul>
+
+        <!-- Mensaje cuando no hay pendientes -->
+        <p id="vacio-rapido" class="texto-vacio">
+          ¡Agrega tu primer pendiente! ♡
+        </p>
+
+      </article>
+
+
+      <!-- 5.2. WATER TRACKER: contador de agua -->
+      <article class="widget panel widget-agua">
+
+        <div class="widget-cabecera">
+          <div>
+            <span class="widget-emoji">💧</span>
+            <h3>Water tracker</h3>
+          </div>
+
+          <span class="mini-etiqueta azul">Hidratación</span>
+        </div>
+
+        <p class="widget-descripcion">
+          Pequeños recordatorios para cuidarte.
+        </p>
+
+        <!-- Vaso y cantidad registrada -->
+        <div class="agua-centro">
+
+          <div class="vaso" aria-label="Progreso de vasos de agua">
+            <div class="agua-relleno" id="agua-relleno"></div>
+            <span>💧</span>
+          </div>
+
+          <div>
+            <strong class="agua-numero">
+              <span id="agua-cantidad">0</span>
+              <small>/ 8 vasos</small>
+            </strong>
+
+            <p id="agua-mensaje">¡Cada vaso cuenta!</p>
+          </div>
+
+        </div>
+
+        <!-- Barra visual de progreso -->
+        <div class="barra-progreso">
+          <span id="agua-barra"></span>
+        </div>
+
+        <!-- Botones para actualizar el contador -->
+        <div class="botones-agua">
+
+          <button class="boton boton-suave" id="agua-restar" type="button">
+            − Quitar
+          </button>
+
+          <button class="boton boton-azul" id="agua-sumar" type="button">
+            + Un vaso
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- 5.3. NOTAS RÁPIDAS -->
+      <article class="widget panel widget-notas">
+
+        <div class="widget-cabecera">
+          <div>
+            <span class="widget-emoji">💌</span>
+            <h3>Notas rápidas</h3>
+          </div>
+
+          <span class="mini-etiqueta rosa">Ideas tuyas</span>
+        </div>
+
+        <p class="widget-descripcion">
+          Guarda ideas, recordatorios o pensamientos.
+        </p>
+
+        <!-- Formulario para escribir una nota -->
+        <form id="form-nota" class="form-nota">
+
+          <label class="solo-lectores" for="texto-nota">
+            Escribe una nota
+          </label>
+
+          <textarea
+            id="texto-nota"
+            rows="3"
+            maxlength="500"
+            placeholder="Hoy quiero recordar que..."
+            required
+          ></textarea>
+
+          <button class="boton boton-principal" type="submit">
+            Guardar nota ♡
+          </button>
+
+        </form>
+
+        <!-- JavaScript muestra aquí las notas guardadas -->
+        <div id="lista-notas" class="lista-notas"></div>
+
+        <p id="vacio-notas" class="texto-vacio">
+          Tus notas aparecerán aquí. 🌷
+        </p>
+
+      </article>
+
+
+      <!-- 5.4. HÁBITOS DIARIOS -->
+      <article class="widget panel widget-habitos">
+
+        <div class="widget-cabecera">
+          <div>
+            <span class="widget-emoji">🌷</span>
+            <h3>Hábitos </h3>
+          </div>
+
+          <span class="mini-etiqueta verde">Hoy por mí</span>
+        </div>
+
+        <p class="widget-descripcion">
+          Marca cada hábito cuando lo completes.
+        </p>
+
+        <!-- Cada casilla representa un hábito -->
+        <div class="lista-habitos">
+
+          <label class="habito">
+            <input type="checkbox" data-habito="agua">
+            <span class="check-dibujo">♡</span>
+            <span>Tomar agua</span>
+            <span class="habito-emoji">💧</span>
+          </label>
+
+          <label class="habito">
+            <input type="checkbox" data-habito="pausa">
+            <span class="check-dibujo">♡</span>
+            <span>Tomar una pausa</span>
+            <span class="habito-emoji">☁️</span>
+          </label>
+
+          <label class="habito">
+            <input type="checkbox" data-habito="orden">
+            <span class="check-dibujo">♡</span>
+            <span>Ordenar mi espacio</span>
+            <span class="habito-emoji">🧸</span>
+          </label>
+
+          <label class="habito">
+            <input type="checkbox" data-habito="lectura">
+            <span class="check-dibujo">♡</span>
+            <span>Aprender algo nuevo</span>
+            <span class="habito-emoji">📚</span>
+          </label>
+
+        </div>
+
+        <!-- Resumen de los hábitos marcados -->
+        <div class="habitos-pie">
+          <span id="habitos-contador">0 de 4 hábitos</span>
+          <span>tú puedes ✨</span>
+        </div>
+
+      </article>
+
+
+      <!-- 5.5. PRÓXIMAS TAREAS -->
+      <article class="widget panel widget-calendario">
+
+        <div class="widget-cabecera">
+          <div>
+            <span class="widget-emoji">🗓️</span>
+            <h3>Próximas tareas</h3>
+          </div>
+
+          <span class="mini-etiqueta">Fechas</span>
+        </div>
+
+        <p class="widget-descripcion">
+          Ten a la vista lo que se acerca.
+        </p>
+
+        <!-- JavaScript coloca aquí las tareas con fecha -->
+        <div id="proximas-tareas" class="proximas-tareas"></div>
+
+        <p id="vacio-proximas" class="texto-vacio">
+          Todavía no hay tareas con fecha. ♡
+        </p>
+
+        <!-- Acceso al tablero completo -->
+        <a class="enlace-morado" href="tareas.html">
+          Ver todas mis tareas →
+        </a>
+
+      </article>
+
+    </section>
+
+
+    <!-- INVITACIÓN AL PLANIFICADOR
+         Acceso al tablero -->
+
+    <section class="cta-planificador">
+
+      <div>
+        <span> Un plan pequeño también es un plan ✧</span>
+
+        <h2>¿Lista para organizar tus metas?</h2>
+
+        <p>
+          Revisa tus tareas, cambia su estado y celebra cada logro.
+        </p>
+      </div>
+
+      <a class="boton boton-principal" href="tareas.html">
+        Abrir mi tablero ♡
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!--PIE DE PÁGINA -->
+
+  <footer>
+     ♡ LOGRA 2026 · Organiza tus ideas. Cumple tus metas.
+  </footer>
+
+
+  <!-- CONEXIÓN CON JAVASCRIPT
+       Controla los widgets del inicio -->
+
+  <script src="../js/inicio.js"></script>
+
+</body>
+</html>

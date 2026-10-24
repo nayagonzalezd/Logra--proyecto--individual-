@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tablero principal | LOGRA</title>
+
+    <!-- Estilos del tablero de tareas -->
+    <link rel="stylesheet" href="../css/tareas.css">
+</head>
+
+<body>
+
+    <!-- Encabezado principal -->
+    <header class="encabezado">
+        <h1>♡ LOGRA</h1>
+        <p>Pequeños pasos, grandes logros.</p>
+
+        
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenedor">
+
+        <!-- Bienvenida -->
+        <section class="bienvenida">
+
+            <div class="saludo-contenedor">
+
+                <div class="saludo-texto">
+                    <h2>Hola! Vamos a lograrlo</h2>
+                    <p>Organiza tus tareas y avanza a tu ritmo.</p>
+
+                    <a href="crear-tarea.html" class="boton-crear">
+                        + Crear nueva tarea
+                    </a>
+                </div>
+
+                <img src="../images/nayaescri.png"
+                     alt="Ilustración de LOGRA"
+                     class="imagen-saludo">
+
+            </div>
+
+        </section>
+
+        <!-- Tablero organizado por estados -->
+        <section class="tablero">
+
+            <!-- Tareas pendientes -->
+            <div class="columna pendiente">
+                <h3>♡ Por hacer</h3>
+                <div id="lista-pendientes" class="lista-tareas"></div>
+            </div>
+
+            <!-- Tareas en progreso -->
+            <div class="columna progreso">
+                <h3>♡ En progreso</h3>
+                <div id="lista-progreso" class="lista-tareas"></div>
+            </div>
+
+            <!-- Tareas completadas -->
+            <div class="columna completada">
+                <h3>♡ Completadas</h3>
+                <div id="lista-completadas" class="lista-tareas"></div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>
+            <a href="index.html">← Volver al inicio de LOGRA</a>
+            · LOGRA 2026 ♡
+        </p>
+    </footer>
+
+    <!-- JavaScript que muestra las tareas en el tablero -->
+    <script src="../js/tareas.js"></script>
+
+</body>
+</html>

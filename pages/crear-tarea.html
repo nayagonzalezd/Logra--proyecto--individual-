@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,26 +6,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title> Nueva Tarea </title>
+    <title>Nueva Tarea</title>
 
-    <link rel="stylesheet" href="crear-tarea.css">
+    <!-- Estilos de la página Crear tarea -->
+    <link rel="stylesheet" href="../css/crear-tarea.css">
 </head>
 
 <body>
 
     <main>
+        <section class="tarjeta-formulario">
 
-       
-<main>
-    <section class="tarjeta-formulario">
-    <img src="images/Nayaxd.png" alt="Naya" class="foto-naya">
+            <img src="../images/Nayaxd.png" alt="Naya" class="foto-naya">
 
-        <!-- Presentación dentro de la misma caja -->
-        <section class="presentacion">
-            <h1>Vamos a crear una tarea ♡</h1>
-            <p>Organiza tus actividades y haz realidad tus objetivos.</p>
-        </section>
+            <!-- Presentación dentro de la misma caja -->
+            <section class="presentacion">
+                <h1>Vamos a crear una tarea ♡</h1>
+                <p>Organiza tus actividades y haz realidad tus objetivos.</p>
+            </section>
 
+            <!-- Formulario para crear una tarea -->
             <form id="formulario-tarea">
 
                 <!-- Nombre -->
@@ -93,19 +94,25 @@
                         Guardar tarea
                     </button>
 
-                    <a href="tareas.html" class="btn btn-cancelar">Cancelar</a>
+                    <a href="tareas.html" class="btn btn-cancelar">
+                        Cancelar
+                    </a>
                 </div>
 
             </form>
-
         </section>
-
     </main>
 
     <!-- Pie de página -->
     <footer>
-        <p>LOGRA 2026 | Organiza tus ideas. Cumple tus metas. ♡</p>
+        <p>
+            <a href="index.html">← Volver al inicio de LOGRA</a>
+            · LOGRA 2026 ♡
+        </p>
     </footer>
+
+    <!-- JavaScript del formulario -->
+    <script src="../js/crear-tarea.js"></script>
 
 </body>
 

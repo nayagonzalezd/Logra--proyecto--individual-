@@ -1,0 +1,356 @@
+
+/* Mis fuentes lindas */
+
+@font-face {
+    font-family: "FuenteTitulos";
+    src: url("../fonts/KGPerfectPenmanship.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "FuenteTextos";
+    src: url("../fonts/Letters%20for%20Learners.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Generalidades */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "FuenteTextos", sans-serif;
+    color: #51445a;
+
+    background-image:
+        linear-gradient(
+            rgba(249, 239, 255, 0.45),
+            rgba(252, 232, 243, 0.45)
+        ),
+        url("../images/fondo.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Encabezado */
+
+.encabezado {
+    padding: 20px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.encabezado h1 {
+    margin: 0;
+    color: #8756C7;
+    font-family: "FuenteTitulos", sans-serif;
+}
+
+.encabezado p {
+    margin-bottom: 0;
+}
+
+/* Contenedor principal */
+
+.contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+/* Bienvenida */
+
+.bienvenida {
+    padding: 25px;
+    margin-bottom: 25px;
+    background-color: rgba(255, 255, 255, 0.97);
+    border-radius: 18px;
+    box-shadow: 0 4px 12px #DCD2E8;
+}
+
+.bienvenida h2 {
+    margin-top: 0;
+    color: #8756C7;
+    font-family: "FuenteTitulos", sans-serif;
+}
+
+/* Botón crear tarea */
+
+.boton-crear {
+    display: inline-block;
+    padding: 12px 18px;
+    margin-top: 10px;
+    background-color: #DDA5D0;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 12px;
+}
+
+.boton-crear:hover {
+    background-color: #C889B8;
+}
+
+/* Tablero */
+
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.columna {
+    min-height: 250px;
+    padding: 16px;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.columna h3 {
+    margin-top: 0;
+    font-family: "FuenteTitulos", sans-serif;
+}
+
+/* Colores de las columnas */
+
+.pendiente {
+    background-color: rgba(240, 232, 255, 0.90);
+}
+
+.progreso {
+    background-color: rgba(252, 232, 243, 0.90);
+}
+
+.completada {
+    background-color: rgba(233, 245, 238, 0.90);
+}
+
+/* Lista de tareas */
+
+.lista-tareas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 180px;
+}
+
+/* Tarjetas */
+
+.tarjeta-tarea {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.97);
+    border-radius: 14px;
+    box-shadow: 0 2px 6px #DCD2E8;
+    overflow-wrap: anywhere;
+}
+
+.tarjeta-tarea h4 {
+    margin: 0 0 10px;
+    color: #8756C7;
+    font-family: "FuenteTitulos", sans-serif;
+}
+
+.tarjeta-tarea p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.fecha-tarea {
+    font-weight: bold;
+}
+
+/* Footer */
+
+footer {
+    padding: 20px;
+    text-align: center;
+    color: #81758D;
+    font-family: "FuenteTextos", sans-serif;
+}
+
+
+/* Movimiento suave de las cajitas */
+
+.bienvenida,
+.columna,
+.tarjeta-tarea {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Al pasar el cursor */
+
+.bienvenida:hover,
+.columna:hover,
+.tarjeta-tarea:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(120, 75, 145, 0.20);
+}
+
+/* Al tocar las cajitas */
+
+.bienvenida:active,
+.columna:active {
+    transform: scale(0.98);
+}
+
+/* Respetar la preferencia de movimiento reducido */
+
+@media (prefers-reduced-motion: reduce) {
+    .bienvenida,
+    .columna,
+    .tarjeta-tarea {
+        transition: none;
+    }
+
+    .bienvenida:hover,
+    .columna:hover,
+    .tarjeta-tarea:hover,
+    .bienvenida:active,
+    .columna:active,
+    .tarjeta-tarea:active {
+        transform: none;
+    }
+}
+
+
+/* Adaptación para celular */
+
+@media (max-width: 750px) {
+    .tablero {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* Acciones funcionales de las tarjetas */
+.acciones-tarea {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    margin-top: 12px;
+}
+.selector-estado,
+.accion-secundaria,
+.accion-eliminar {
+    max-width: 100%;
+    padding: 7px 9px;
+    border: 1px solid #e7d8f0;
+    border-radius: 10px;
+    background: #fbf7ff;
+    color: #7954a3;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+.accion-eliminar {
+    color: #a9577d;
+    background: #fff1f6;
+    border-color: #f2d8e5;
+}
+.solo-lectores {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+@media (max-width: 750px) {
+    .acciones-tarea { align-items: stretch; }
+    .selector-estado { flex: 1 1 100%; }
+}
+
+.enlaces-encabezado a, footer a { color: #8756C7; text-decoration: none; font-weight: bold; }
+.enlaces-encabezado a:hover, footer a:hover { text-decoration: underline; }
+
+/* Arrastrar tarjetas entre las columnas del tablero */
+
+/* Permite identificar las tarjetas que se pueden arrastrar */
+.tarjeta-tarea[draggable="true"] {
+    cursor: grab;
+    user-select: none;
+}
+
+/* Cambia el cursor mientras se intenta mover una tarjeta */
+.tarjeta-tarea[draggable="true"]:active {
+    cursor: grabbing;
+}
+
+/* Apariencia de la tarjeta mientras está siendo arrastrada */
+.tarjeta-tarea.arrastrando {
+    opacity: 0.45;
+    transform: none;
+}
+
+/* Indica visualmente dónde podemos soltar una tarjeta */
+.lista-tareas.zona-soltar {
+    min-height: 120px;
+    padding: 10px;
+    border: 2px dashed #B99ADE;
+    border-radius: 14px;
+    background-color: rgba(255, 255, 255, 0.55);
+}
+
+.enlaces-encabezado {
+    text-align: right;
+    font-size: 22px;
+    position: relative;
+    top: -60px;
+}
+
+footer p {
+    font-size: 24px;
+}
+
+footer p {
+    font-size: 24px;
+}
+
+footer p {
+    color: hsl(60, 100%, 99%);
+}
+
+footer p a {
+    color: #845bf7;
+}
+
+.saludo-contenedor {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+}
+
+.saludo-texto {
+    flex: 1;
+}
+
+.imagen-saludo {
+    width: 700px;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    top: -180px;
+    right: -250px;
+    display: block;
+}
