@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,65 +8,45 @@
   <meta name="theme-color" content="#f5edff">
 
   <!-- Título de la pestaña del navegador -->
-  <title>Inicio | LOGRA </title>
+  <title>Inicio | LOGRA</title>
 
   <!-- Conexión con los estilos CSS -->
-  <!-- ../ permite salir de pages y entrar en css -->
   <link rel="stylesheet" href="../css/inicio.css">
+  <link rel="stylesheet" href="../css/header.css">
 </head>
 
 <body>
 
-  <!-- BARRA SUPERIOR Y NAVEGACIÓN
-       Logo de LOGRA y enlaces a las páginas -->
-  <header class="barra-superior">
-
-    <!-- Logo: al hacer clic, vuelve al inicio -->
-    <a class="marca" href="index.html" aria-label="Inicio de LOGRA">
-      <span class="marca-icono">💜</span>
-      <span>LOGRA</span>
-    </a>
-
-    <!-- Menú principal -->
-    <nav aria-label="Navegación principal">
-      <a class="nav-activo" href="index.html">Inicio</a>
-      <a href="tareas.html">Mi planificador</a>
-      <a href="crear-tarea.html"> Nueva tarea</a>
-    </nav>
-
-  </header>
-
+  <!-- HEADER COMPARTIDO -->
+  <div id="header-container"></div>
 
   <!-- CONTENIDO PRINCIPAL DEL DASHBOARD -->
   <main class="dashboard">
 
-    <!-- 2.1. Bienvenida e ilustración decorativa -->
+    <!-- Bienvenida e ilustración decorativa -->
     <section class="saludo panel">
 
       <div class="saludo-texto">
-        <span class="eyebrow">BIENVENIDA A LOGRA </span>
+        <span class="eyebrow">BIENVENIDA A LOGRA</span>
 
-        <h1>¡Hola! </h1>
+        <h1>¡Hola!</h1>
 
         <p>Un paso a la vez. Hoy también puedes lograrlo.</p>
 
         <a class="boton boton-principal" href="tareas.html">
-          Ir a mi planificador 
+          Ir a mi planificador
         </a>
       </div>
 
-<!-- Imagen decorativa -->
-<div class="saludo-ilustracion">
-    <img src="../images/nayacomputa.png"
-         alt="Ilustración decorativa">
-</div>
+      <!-- Imagen decorativa -->
+      <div class="saludo-ilustracion">
+        <img src="../images/nayacomputa.png"
+             alt="Ilustración decorativa">
+      </div>
 
     </section>
 
-
-    <!--  TARJETAS DE RESUMEN
-         Los valores se actualizan con JavaScript-->
-
+    <!-- TARJETAS DE RESUMEN -->
     <section class="resumen-grid" aria-label="Resumen de tu día">
 
       <!-- Cantidad total de tareas -->
@@ -108,9 +87,7 @@
 
     </section>
 
-
-    <!-- TÍTULO DE LAS HERRAMIENTAS
-         Muestra la fecha actual -->
+    <!-- TÍTULO DE LAS HERRAMIENTAS -->
     <div class="seccion-titulo">
 
       <div>
@@ -122,12 +99,10 @@
 
     </div>
 
-
-    <!-- WIDGETS DE ORGANIZACIÓN PERSONAL-->
+    <!-- WIDGETS DE ORGANIZACIÓN PERSONAL -->
     <section class="widgets-grid">
 
-
-      <!-- 5.1. TO-DO LIST: pendientes rápidos -->
+      <!-- TO-DO LIST: pendientes rápidos -->
       <article class="widget panel widget-todo">
 
         <div class="widget-cabecera">
@@ -169,13 +144,12 @@
 
         <!-- Mensaje cuando no hay pendientes -->
         <p id="vacio-rapido" class="texto-vacio">
-          ¡Agrega tu primer pendiente! 
+          ¡Agrega tu primer pendiente!
         </p>
 
       </article>
 
-
-      <!-- 5.2. WATER TRACKER: contador de agua -->
+      <!-- WATER TRACKER: contador de agua -->
       <article class="widget panel widget-agua">
 
         <div class="widget-cabecera">
@@ -230,8 +204,7 @@
 
       </article>
 
-
-      <!-- 5.3. NOTAS RÁPIDAS -->
+      <!-- NOTAS RÁPIDAS -->
       <article class="widget panel widget-notas">
 
         <div class="widget-cabecera">
@@ -263,7 +236,7 @@
           ></textarea>
 
           <button class="boton boton-principal" type="submit">
-            Guardar nota 
+            Guardar nota
           </button>
 
         </form>
@@ -272,19 +245,18 @@
         <div id="lista-notas" class="lista-notas"></div>
 
         <p id="vacio-notas" class="texto-vacio">
-          Tus notas aparecerán aquí. 
+          Tus notas aparecerán aquí.
         </p>
 
       </article>
 
-
-      <!-- 5.4. HÁBITOS DIARIOS -->
+      <!-- HÁBITOS DIARIOS -->
       <article class="widget panel widget-habitos">
 
         <div class="widget-cabecera">
           <div>
             <span class="widget-emoji">🌷</span>
-            <h3>Hábitos </h3>
+            <h3>Hábitos</h3>
           </div>
 
           <span class="mini-etiqueta verde">Hoy por mí</span>
@@ -295,7 +267,7 @@
         </p>
 
         <!-- Cada casilla representa un hábito -->
-        <div class="lista-habitos">
+        <div class="lista_habitos lista-habitos">
 
           <label class="habito">
             <input type="checkbox" data-habito="agua">
@@ -335,8 +307,7 @@
 
       </article>
 
-
-      <!-- 5.5. PRÓXIMAS TAREAS -->
+      <!-- PRÓXIMAS TAREAS -->
       <article class="widget panel widget-calendario">
 
         <div class="widget-cabecera">
@@ -368,14 +339,11 @@
 
     </section>
 
-
-    <!-- INVITACIÓN AL PLANIFICADOR
-         Acceso al tablero -->
-
+    <!-- INVITACIÓN AL PLANIFICADOR -->
     <section class="cta-planificador">
 
       <div>
-        <span> Un plan pequeño también es un plan </span>
+        <span>Un plan pequeño también es un plan</span>
 
         <h2>¿Lista para organizar tus metas?</h2>
 
@@ -385,24 +353,23 @@
       </div>
 
       <a class="boton boton-principal" href="tareas.html">
-        Abrir mi tablero 
+        Abrir mi tablero
       </a>
 
     </section>
 
   </main>
 
-
-  <!--PIE DE PÁGINA -->
-
+  <!-- PIE DE PÁGINA -->
   <footer>
-      · LOGRA 2026 · Organiza tus ideas. Cumple tus metas.
+    · LOGRA 2026 · Organiza tus ideas. Cumple tus metas.
   </footer>
 
+  <!-- CONEXIÓN CON JAVASCRIPT -->
+  <!-- Carga el header compartido -->
+  <script src="../js/header.js"></script>
 
-  <!-- CONEXIÓN CON JAVASCRIPT
-       Controla los widgets del inicio -->
-
+  <!-- Controla los widgets del inicio -->
   <script src="../js/inicio.js"></script>
 
 </body>

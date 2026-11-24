@@ -28,7 +28,6 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 0;
     font-family: "FuenteTextos", sans-serif;
     color: #51445a;
@@ -50,10 +49,9 @@ body {
 main {
     width: 92%;
     max-width: 560px;
-    margin: 20px auto;
+    margin: 100px auto 20px;
     flex: none;
 }
-
 
 /* Tarjeta del formulario */
 

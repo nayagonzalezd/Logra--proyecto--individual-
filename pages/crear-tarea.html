@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,9 +9,15 @@
 
     <!-- Estilos de la página Crear tarea -->
     <link rel="stylesheet" href="../css/crear-tarea.css">
+
+    <!-- Estilos del header -->
+    <link rel="stylesheet" href="../css/header.css">
 </head>
 
 <body>
+
+    <!-- Header compartido -->
+    <div id="header-container"></div>
 
     <main>
         <section class="tarjeta-formulario">
@@ -21,7 +26,7 @@
 
             <!-- Presentación dentro de la misma caja -->
             <section class="presentacion">
-                <h1>Vamos a crear una tarea </h1>
+                <h1>Vamos a crear una tarea</h1>
                 <p>Organiza tus actividades y haz realidad tus objetivos.</p>
             </section>
 
@@ -114,10 +119,13 @@
     <!-- Pie de página -->
     <footer>
         <p>
-            <a href="index.html"> Volver al inicio de LOGRA</a>
+            <a href="index.html">Volver al inicio de LOGRA</a>
             · LOGRA 2026 ·
         </p>
     </footer>
+
+    <!-- JavaScript para cargar el header -->
+    <script src="../js/header.js"></script>
 
     <!-- JavaScript del formulario -->
     <script src="../js/crear-tarea.js"></script>
