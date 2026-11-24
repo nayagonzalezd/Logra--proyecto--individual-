@@ -113,7 +113,7 @@ formulario.addEventListener("submit", function (evento) {
        Informamos al usuario que la tarea se guardó.
     */
 
-    alert("¡Tu tarea se guardó correctamente! ♡");
+    alert("¡Tu tarea se guardó correctamente!");
 
 
     /* LIMPIAR Y REDIRIGIR
